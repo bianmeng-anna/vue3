@@ -1,30 +1,27 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+<div>123
+  <p>{{ $store.state.moduleA.username }}</p>
+  <p>{{ $store.getters.newName }}</p>
+  <br>
+  <!-- 带命名空间 -->
+  <p>{{ $store.state.moduleB.username }}</p>
+  <p>{{ $store.getters['moduleB/newName'] }}</p>
+
+</div>
+
 </template>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  name: 'App',
+  setup () {
+    // const a = $store.state.modulesA.username
+    // console.log(a)
+    // return { a }
   }
 }
+</script>
+<style lang='less' scoped>
+
 </style>
